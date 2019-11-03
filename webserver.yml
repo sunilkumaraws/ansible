@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  task:
+  - name: install web server(apach2)on ubuntu18
+    apt:
+     name: apache2
+     state: present
+  - name : start apache2 server
+    service:
+     name: apache2
+     state: started
+     
