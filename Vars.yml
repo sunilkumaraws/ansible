@@ -1,0 +1,14 @@
+---
+- hosts: webservers
+  become: yes
+  vars:
+   name: sunil
+   last: inugurthi
+  tasks:
+  - name: display name
+    debug:
+     msg: "{{name}}"
+  - name: display last
+    debug:
+     msg: "{{last}}"
+     
