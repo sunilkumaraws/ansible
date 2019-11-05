@@ -1,0 +1,15 @@
+---
+- host: webservers
+  become: yes
+  tasks:
+  - name: install jdk on ubuntu
+    apt:
+     name: {{myjavaonubuntu}}
+     state: present
+    when: ansible_os_family == "Debian"
+
+  - name: install jdk on amazon linux
+    yum:
+     name: {{myjavaonamazonos}}
+     state: present
+    when: ansible_os_family == "RedHat"
