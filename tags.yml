@@ -1,0 +1,17 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks: 
+  - name: install wget
+    apt: 
+      name: wget
+      state: present
+    tags:
+    - wgetpackage
+  - name: install git 
+    apt:
+      name: git
+      state: present
+    tags:
+    - gitpackage
+    
