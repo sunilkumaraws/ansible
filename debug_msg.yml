@@ -1,0 +1,11 @@
+---
+- hosts: amazon
+  become: yes
+  tasks: 
+  - name: i want know hostname
+    command: hostname -f
+    register: myresult
+  - name: display result
+    debug:
+      msg: "{{myresult}}"
+      

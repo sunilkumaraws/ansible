@@ -1,0 +1,15 @@
+---
+- hosts: amazon
+  become: yes
+  tasks:
+  - name: install git
+    yum:
+     namee: git
+     state: present
+    ignore_errors: yes
+    
+  - name: install wget
+    yum:
+     name: wget
+     state: present
+    ignore_errors: yes
