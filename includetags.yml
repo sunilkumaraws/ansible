@@ -1,4 +1,5 @@
 ---
+  hosts: ubuntu
   become: yes
   tasks:
   - include_tasks: files.yml
